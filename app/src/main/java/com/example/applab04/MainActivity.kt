@@ -75,7 +75,10 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         }
         Image(
             painter = painterResource(id = R.drawable.ic_launcher_foreground),
-            contentDescription = "Icono Android"
+            contentDescription = "Icono Android",
+            modifier = Modifier
+                .size(120.dp)
+                .padding(8.dp)
         )
     }
 }
