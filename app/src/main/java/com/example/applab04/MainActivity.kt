@@ -12,6 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.applab04.ui.theme.AppLab04Theme
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Button
+
+import androidx.compose.ui.Alignment
+
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,12 +36,32 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
+
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
+    // Columna para organizar el texto y el botón uno debajo del otro
+    Column(
         modifier = modifier
-    )
+            .fillMaxSize() // que ocupe toda la pantalla
+            .padding(16.dp), // un poco de espacio alrededor
+        verticalArrangement = Arrangement.Center, // centrado vertical
+        horizontalAlignment = Alignment.CenterHorizontally // centrado horizontal
+    ) {
+        // Texto principal
+        Text(
+            text = "Hello $name!"
+        )
+
+        Spacer(modifier = Modifier.height(16.dp)) // espacio entre el texto y el botón
+
+        // Botón simple
+        Button(
+            onClick = { /* Acción cuando se presiona */ }
+        ) {
+            Text("Presióname")
+        }
+    }
 }
 
 @Preview(showBackground = true)
@@ -45,3 +71,4 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+
