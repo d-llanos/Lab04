@@ -14,8 +14,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.applab04.ui.theme.AppLab04Theme
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
-
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+
 
 import androidx.compose.ui.unit.dp
 
@@ -60,6 +62,15 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             onClick = { /* Acción cuando se presiona */ }
         ) {
             Text("Presióname")
+        }
+        // Checkbox simple
+        var checked by remember { mutableStateOf(false) }
+        Checkbox(
+            checked = checked,
+            onCheckedChange = { checked = it }
+        )
+        if (checked) {
+            Text("Opción activada ")
         }
     }
 }
