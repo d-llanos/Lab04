@@ -19,7 +19,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.Image
-
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
@@ -60,9 +60,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
         // Botón simple
         Button(
-            onClick = { /* Acción cuando se presiona */ }
+            onClick = { /* Acción simple */ },
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            colors = ButtonDefaults.buttonColors(containerColor = Color.Green)
         ) {
-            Text("Presióname")
+            Text("Presióname", color = Color.White)
         }
         // Checkbox simple
         var checked by remember { mutableStateOf(false) }
