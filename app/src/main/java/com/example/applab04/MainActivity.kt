@@ -17,7 +17,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
-
+import androidx.compose.ui.res.painterResource
+import androidx.compose.foundation.Image
 
 import androidx.compose.ui.unit.dp
 
@@ -72,6 +73,10 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         if (checked) {
             Text("Opción activada ")
         }
+        Image(
+            painter = painterResource(id = R.drawable.ic_launcher_foreground),
+            contentDescription = "Icono Android"
+        )
     }
 }
 
